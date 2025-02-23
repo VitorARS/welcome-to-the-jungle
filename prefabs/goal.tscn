@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/goal.gd" type="Script" id=1]
+[ext_resource path="res://Free/Items/Checkpoints/End/End (Idle).png" type="Texture" id=2]
+[ext_resource path="res://sound_fx/level_completed.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.6092, 24.2931 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.37069, 0.62931, 0.974138, 0.982759, 0.991379, 1 )
+colors = PoolColorArray( 0.581349, 0.22709, 0.22709, 1, 0.819631, 0.128067, 0.128067, 1, 0.858824, 0.843137, 0.843137, 0, 0.899329, 0.51334, 0.51334, 1, 0.857382, 0.310565, 0.310565, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 1.6319, 0, 0, Vector2( 0.37406, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.449248, 0.670391 ), -2.37986, -2.37986, 0, 0, Vector2( 0.734962, 0.498612 ), -0.906612, -0.906612, 0, 0, Vector2( 1, 0.572232 ), -1.35054, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 90.0
+initial_velocity_random = 0.2
+angular_velocity = 100.0
+angular_velocity_random = 0.2
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 20.0
+angle_random = 0.2
+scale = 1.6
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+hue_variation = 0.8
+hue_variation_random = 1.0
+
+[node name="goal" type="Area2D"]
+position = Vector2( 1.26134, -31.1132 )
+collision_layer = 16
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.472473, 8.18949 )
+shape = SubResource( 1 )
+
+[node name="confetti" type="Particles2D" parent="."]
+position = Vector2( 0, -10.2737 )
+emitting = false
+amount = 21
+explosiveness = 0.6
+randomness = 0.2
+process_material = SubResource( 6 )
+
+[node name="victory_fx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -28.0
+
+[connection signal="body_entered" from="." to="." method="_on_goal_body_entered"]

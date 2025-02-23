@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/king of zip zop.mp3-89c4f0070ffda098ca8e4c258f455559.mp3str"
+
+[deps]
+
+source_file="res://music/king of zip zop.mp3"
+dest_files=[ "res://.import/king of zip zop.mp3-89c4f0070ffda098ca8e4c258f455559.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

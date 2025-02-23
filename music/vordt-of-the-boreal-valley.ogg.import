@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vordt-of-the-boreal-valley.ogg-b7bc78725cf518e49cdfbe94e286a9b5.oggstr"
+
+[deps]
+
+source_file="res://music/vordt-of-the-boreal-valley.ogg"
+dest_files=[ "res://.import/vordt-of-the-boreal-valley.ogg-b7bc78725cf518e49cdfbe94e286a9b5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

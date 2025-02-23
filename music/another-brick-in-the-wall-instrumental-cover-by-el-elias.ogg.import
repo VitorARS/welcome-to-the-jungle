@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/another-brick-in-the-wall-instrumental-cover-by-el-elias.ogg-7b48d049329a0330ef5646b0cfb26252.oggstr"
+
+[deps]
+
+source_file="res://music/another-brick-in-the-wall-instrumental-cover-by-el-elias.ogg"
+dest_files=[ "res://.import/another-brick-in-the-wall-instrumental-cover-by-el-elias.ogg-7b48d049329a0330ef5646b0cfb26252.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

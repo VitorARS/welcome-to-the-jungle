@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://button-jump.png" type="Texture" id=1]
+[ext_resource path="res://button-right.png" type="Texture" id=2]
+[ext_resource path="res://button-left.png" type="Texture" id=3]
+
+[node name="control_android" type="CanvasLayer"]
+
+[node name="left" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 0, 138 )
+normal = ExtResource( 3 )
+passby_press = true
+action = "move_left"
+
+[node name="right" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.505882 )
+position = Vector2( 37.8403, 138 )
+normal = ExtResource( 2 )
+passby_press = true
+action = "move_right"
+
+[node name="jump" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.509804 )
+position = Vector2( 267.405, 137.364 )
+normal = ExtResource( 1 )
+action = "move_up"

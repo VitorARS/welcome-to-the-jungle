@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/time-2011-remastered.ogg-594484af0852fcd70bc4f0e54151c6cf.oggstr"
+
+[deps]
+
+source_file="res://music/time-2011-remastered.ogg"
+dest_files=[ "res://.import/time-2011-remastered.ogg-594484af0852fcd70bc4f0e54151c6cf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

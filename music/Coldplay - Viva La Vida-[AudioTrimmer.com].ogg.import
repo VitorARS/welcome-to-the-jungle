@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Coldplay - Viva La Vida-[AudioTrimmer.com].ogg-03f0583d93f1b2e21c9e83a2f4fa9fbc.oggstr"
+
+[deps]
+
+source_file="res://music/Coldplay - Viva La Vida-[AudioTrimmer.com].ogg"
+dest_files=[ "res://.import/Coldplay - Viva La Vida-[AudioTrimmer.com].ogg-03f0583d93f1b2e21c9e83a2f4fa9fbc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

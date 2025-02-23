@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/meme ultra mega.mp3-ff9925cf2fa82d64718b4011256f5499.mp3str"
+
+[deps]
+
+source_file="res://music/meme ultra mega.mp3"
+dest_files=[ "res://.import/meme ultra mega.mp3-ff9925cf2fa82d64718b4011256f5499.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

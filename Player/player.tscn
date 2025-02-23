@@ -1,0 +1,549 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Free/Main Characters/Mask Dude/Idle (32x32).png" type="Texture" id=1]
+[ext_resource path="res://scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Run (32x32).png" type="Texture" id=3]
+[ext_resource path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Jump (32x32).png" type="Texture" id=4]
+[ext_resource path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Hit (32x32).png" type="Texture" id=5]
+[ext_resource path="res://Free/Main Characters/Mask Dude/Fall (32x32).png" type="Texture" id=6]
+[ext_resource path="res://Free/Other/Dust Particle.png" type="Texture" id=7]
+[ext_resource path="res://Pixel Adventure 1/Free/Other/Shadow.png" type="Texture" id=8]
+[ext_resource path="res://sound_fx/jump1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://itens/arminha.png" type="Texture" id=10]
+[ext_resource path="res://Player/shoot.png" type="Texture" id=11]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.00862069, 0.0862069, 0.12931, 1 )
+colors = PoolColorArray( 0.94902, 0.945098, 0.933333, 0, 0.96036, 0.960219, 0.948454, 0, 0.960784, 0.960784, 0.94902, 0, 0.960099, 0.959871, 0.948106, 0, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.0507519, 0.279141 ), 0.0, 0.773006, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 1.5
+scale_random = 0.8
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "aim"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("arminha:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("arminha:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("arminha:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3.98008, 7.435 ), Vector2( -5.39749, 7.74998 ), Vector2( -4.13757, 7.74998 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("arminha:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("arminha:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4321, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -5.55498, 10.1123 ), Vector2( -5.498, 9.167 ), Vector2( -5.53491, 8.51949 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texture:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("arminha:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("arminha:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5.08251, 7.59249 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("arminha:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.6, 0.7, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.13757, 7.74998 ), Vector2( -5.55498, 6.33257 ), Vector2( -6.08471, 8.63765 ), Vector2( -6.183, 7.8 ), Vector2( -4.72696, 7.79054 ), Vector2( -4.62873, 7.15382 ), Vector2( -4.43226, 8.96719 ), Vector2( -6.539, 8.6 ), Vector2( -6.44066, 9.96686 ), Vector2( -6.49992, 9.95484 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("arminha:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 6.9913, 11.9599 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 12.1171, 10 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 10, 1.26889 )
+
+[node name="player" type="KinematicBody2D"]
+collision_mask = 94
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="steps_fx" type="Particles2D" parent="."]
+position = Vector2( -7.77709, 13.9911 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+randomness = 0.8
+process_material = SubResource( 5 )
+texture = ExtResource( 7 )
+
+[node name="texture" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+hframes = 12
+
+[node name="arminha" type="Sprite" parent="."]
+visible = false
+position = Vector2( -4.13757, 7.74998 )
+rotation = 1.5708
+scale = Vector2( 0.17, 0.17 )
+texture = ExtResource( 10 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/aim = SubResource( 6 )
+anims/fall = SubResource( 7 )
+anims/hit = SubResource( 8 )
+anims/idle = SubResource( 9 )
+anims/jump = SubResource( 10 )
+anims/run = SubResource( 11 )
+anims/shoot = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.510777, 9.97275 )
+scale = Vector2( 1.23107, 0.395022 )
+shape = SubResource( 13 )
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="RayCast" type="RayCast2D" parent="Raycasts"]
+position = Vector2( -4.32267, 8.11012 )
+enabled = true
+cast_to = Vector2( 0, 12 )
+collision_mask = 24
+
+[node name="RayCast2" type="RayCast2D" parent="Raycasts"]
+position = Vector2( 9.36235, 7.32267 )
+enabled = true
+cast_to = Vector2( 0, 12 )
+collision_mask = 24
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 91.5505, -20.0436 )
+current = true
+limit_left = -90
+limit_bottom = 670
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.4
+drag_margin_top = 0.3
+drag_margin_right = 0.4
+drag_margin_bottom = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2( 0.374573, -3.1839 )
+scale = Vector2( 1, 0.956653 )
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2( 1.68369, -2.52554 )
+shape = SubResource( 14 )
+
+[node name="left" type="RayCast2D" parent="."]
+position = Vector2( -1.6856, 6.5551 )
+enabled = true
+cast_to = Vector2( -26, 0 )
+collision_mask = 2
+
+[node name="right" type="RayCast2D" parent="."]
+position = Vector2( 1.6856, 6.74238 )
+enabled = true
+cast_to = Vector2( 26, 0 )
+collision_mask = 2
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( 2.30368, 12.7242 )
+texture = ExtResource( 8 )
+
+[node name="headCollider" type="Area2D" parent="."]
+visible = false
+position = Vector2( -0.982155, -9.26031 )
+collision_mask = 16
+
+[node name="collision" type="CollisionShape2D" parent="headCollider"]
+position = Vector2( 3.52988, -2.34154 )
+shape = SubResource( 15 )
+
+[node name="jump_fx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[node name="push_right" type="RayCast2D" parent="."]
+visible = false
+position = Vector2( 0.75, 0.25 )
+cast_to = Vector2( 10, 0 )
+collision_mask = 256
+
+[node name="push_left" type="RayCast2D" parent="."]
+visible = false
+cast_to = Vector2( -10, 0 )
+collision_mask = 256
+
+[node name="spawnShoot" type="Position2D" parent="."]
+position = Vector2( 15.1704, 8.61526 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_Hurtbox_body_entered"]
+[connection signal="body_entered" from="headCollider" to="." method="_on_headCollider_body_entered"]

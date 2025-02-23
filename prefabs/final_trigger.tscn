@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/final_trigger.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 54.6478, 78.0103 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 2
+extra_spacing_top = 4
+extra_spacing_bottom = 4
+font_data = ExtResource( 1 )
+
+[node name="final_trigger" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 52.5837, -79.1486 )
+shape = SubResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 67.0151
+margin_top = 84.9487
+margin_right = 107.015
+margin_bottom = 124.949
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win" type="Label" parent="Control"]
+margin_left = -157.0
+margin_top = -129.0
+margin_right = 56.0
+margin_bottom = -80.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fruits" type="Label" parent="Control"]
+modulate = Color( 0.956863, 0.203922, 0.203922, 1 )
+margin_left = -124.116
+margin_top = -188.182
+margin_right = 22.8843
+margin_bottom = -162.182
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemyKills" type="Label" parent="Control"]
+modulate = Color( 0.878431, 0.172549, 0.172549, 1 )
+margin_left = -123.275
+margin_top = -166.932
+margin_right = 23.7252
+margin_bottom = -140.932
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deaths" type="Label" parent="Control"]
+modulate = Color( 0.917647, 0.352941, 0.352941, 1 )
+margin_left = -123.525
+margin_top = -207.796
+margin_right = 23.4746
+margin_bottom = -181.796
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="." to="." method="_on_final_trigger_body_entered"]

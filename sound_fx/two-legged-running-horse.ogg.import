@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/two-legged-running-horse.ogg-3fc79446f9136ca7433055ce237710f8.oggstr"
+
+[deps]
+
+source_file="res://sound_fx/two-legged-running-horse.ogg"
+dest_files=[ "res://.import/two-legged-running-horse.ogg-3fc79446f9136ca7433055ce237710f8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

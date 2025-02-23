@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lucy-in-the-sky-with-diamonds-remastered-2009.ogg-4af817810b2a23b4ecd8c4afdb429595.oggstr"
+
+[deps]
+
+source_file="res://music/lucy-in-the-sky-with-diamonds-remastered-2009.ogg"
+dest_files=[ "res://.import/lucy-in-the-sky-with-diamonds-remastered-2009.ogg-4af817810b2a23b4ecd8c4afdb429595.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
